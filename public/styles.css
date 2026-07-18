@@ -1,60 +1,155 @@
+/* ==========================================================================
+   PRICKLE BRAND SYSTEM — WEB STYLESHEET (2026)
+   Desert / Cactus Inspired Design Tokens
+   ========================================================================== */
+
+/* 1. Font Assets Injection */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+/* 2. Semantic CSS Custom Properties (Variables) */
+:root {
+  /* Brand Palette Framework */
+  --palette-off-white: #f8f4e8;
+  --palette-white: #ffffff;
+  --palette-pale: #fbe7e2;
+  --palette-graham: #dac5b4;
+  --palette-terracotta: #a75e5b;
+  --palette-crimson: #a7294a;
+  --palette-ink: #3b2f2a;
+  --palette-ink-soft: #7a6f68;
+  --palette-milky-pear: #cad6be; /* Custom cohesion token */
+  
+  /* Semantic Mappings */
+  --color-background: var(--palette-off-white);
+  --color-surface: var(--palette-white);
+  --color-text-primary: var(--palette-ink);
+  --color-text-secondary: var(--palette-ink-soft);
+  --color-primary: var(--palette-terracotta);
+  --color-accent: var(--palette-crimson);
+  --color-border: var(--palette-graham);
+  --color-interactive: var(--palette-milky-pear);
+
+  /* Spacing Scale */
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+
+  /* Structural Radii */
+  --radius-md: 12px;
+  --radius-pill: 999px;
+}
+
+/* 3. Global Reset & Body Foundations */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  color: #1a1a1a;
-  background: #fafafa;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-md);
+  -webkit-font-smoothing: antialiased;
 }
 
+/* 4. Navigation Component Layout */
 nav {
+  width: 100%;
+  max-width: 800px;
   display: flex;
-  gap: 24px;
   align-items: center;
-  padding: 20px 32px;
-  border-bottom: 1px solid #eaeaea;
-  background: #fff;
+  justify-content: flex-end;
+  padding: var(--spacing-lg) 0;
+  gap: var(--spacing-xl);
+}
+
+nav .brand {
+  margin-right: auto;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  letter-spacing: -0.5px;
 }
 
 nav a {
-  color: #1a1a1a;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  transition: color 0.2s ease, border-color 0.2s ease;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
 }
 
 nav a:hover {
-  color: #7b3fe4;
+  color: var(--color-text-primary);
+  border-color: var(--color-interactive);
 }
 
-.brand {
-  font-weight: 700;
-  font-size: 18px;
-  margin-right: auto;
-}
-
+/* 5. Main Feature Stage Layout */
 main {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 96px 24px;
-  text-align: center;
+  flex: 1;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--spacing-xxl) 0;
 }
 
 h1 {
-  font-size: 40px;
-  margin: 0 0 16px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+  letter-spacing: -1px;
 }
 
 p {
-  font-size: 18px;
-  line-height: 1.5;
-  color: #555;
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  max-width: 540px;
 }
 
+/* 6. Footer Layout */
 footer {
-  text-align: center;
-  padding: 32px;
-  color: #999;
-  font-size: 13px;
+  width: 100%;
+  max-width: 800px;
+  padding: var(--spacing-xl) 0;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  border-top: 1px solid var(--color-border);
+  text-align: left;
+}
+
+/* 7. Responsive Device Scaling optimizations */
+@media (max-width: 600px) {
+  body {
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+  
+  nav {
+    gap: var(--spacing-lg);
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
 }
