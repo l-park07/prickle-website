@@ -1,14 +1,7 @@
 {
   "name": "prickle-website",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Static coming-soon site for Prickle, served from /public via Firebase Hosting.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/l-park07/prickle-website.git"
@@ -19,15 +12,5 @@
   "bugs": {
     "url": "https://github.com/l-park07/prickle-website/issues"
   },
-  "homepage": "https://github.com/l-park07/prickle-website#readme",
-  "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest"
-  },
-  "devDependencies": {
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "typescript": "latest"
-  }
+  "homepage": "https://github.com/l-park07/prickle-website#readme"
 }

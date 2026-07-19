@@ -3,60 +3,100 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Prickle</title>
+    <title>Prickle — coming soon</title>
+    <meta name="description" content="Prickle is a gentler way to track eczema — quick daily logs that stay on your device. Sign up to hear when it launches.">
+    <meta name="theme-color" content="#f8f4e8">
+
+    <link rel="icon" href="/assets/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getprickle.app/">
+    <meta property="og:title" content="Prickle — coming soon">
+    <meta property="og:description" content="A gentler way to track eczema. Quick daily logs that stay on your device, not ours.">
+    <meta property="og:image" content="https://getprickle.app/assets/og-image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Prickle — coming soon">
+    <meta name="twitter:description" content="A gentler way to track eczema. Quick daily logs that stay on your device, not ours.">
+    <meta name="twitter:image" content="https://getprickle.app/assets/og-image.png">
+
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
-    <nav>
-      <span class="brand">Prickle</span>
-      <a href="/about.html">About</a>
-      <a href="/story.html">Our Story</a>
-      <a href="/privacy.html">Privacy</a>
-    </nav>
-    <main>
-      <!-- Hero Section -->
-      <section class="hero">
-        <div class="hero-content">
-          <h1>Track your days. Protect your peace.</h1>
-          <p>Prickle is a calming, private tracking space designed to validate your journey, not judge it. Built for resilience and steady growth.</p>
-          
-          <div class="cta-group">
-            <input type="email" placeholder="Enter your email" class="waitlist-input" />
-            <button class="primary-btn">Join the Waitlist</button>
-          </div>
-        </div>
-        
-        <!-- Placeholder for your future emulator screengrab -->
-        <div class="hero-image-placeholder">
-          <div class="mockup-frame">
-            <span>App Preview Coming Soon</span>
-          </div>
-        </div>
-      </section>
+    <main class="coming-soon">
+      <img class="logo" src="/assets/cactus-app-logo.png" alt="" width="80" height="80">
 
-      <!-- Core Pillars Grid -->
-      <section class="features-grid">
-        <div class="feature-card">
-          <h3>Frictionless Logging</h3>
-          <p>Quickly record your daily metrics without overwhelming menus or demanding streaks.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Validating Insights</h3>
-          <p>A completely neutral, warm severity scale that respects your reality instead of flashing alarming red warnings.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Private by Design</h3>
-          <p>Your data is yours alone. Stored securely so you can reflect with complete peace of mind.</p>
-        </div>
-      </section>
+      <p class="eyebrow">Coming soon</p>
+      <h1>A gentler way to track eczema.</h1>
+      <p class="subhead">
+        Prickle helps you log your skin in seconds and notice how it changes
+        over time — quietly, on your own device. Because showing up to track
+        is the win, not the score.
+      </p>
 
-      <!-- Bottom CTA -->
-      <section class="bottom-cta">
-        <h2>Ready to plant your roots?</h2>
-        <p>Sign up to be the first to know when the initial build goes live.</p>
-        <button class="primary-btn">Get Early Access</button>
-      </section>
+      <ul class="value-strip">
+        <li>Quick daily logs — a few taps, not a chore</li>
+        <li>Your data stays on your device, not our servers</li>
+        <li>No streaks, no shame — a flare isn't a failure</li>
+      </ul>
+
+      <div class="signup">
+        <form id="waitlist-form" novalidate>
+          <label for="email">Want to know when it's ready?</label>
+          <div class="field-row">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            >
+            <button type="submit" id="submit-btn">Keep me posted</button>
+          </div>
+
+          <!-- Honeypot: hidden from real users, off-screen and unreachable by
+               keyboard/AT. If this has a value on submit, it's a bot. -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="company">Company</label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              tabindex="-1"
+              autocomplete="off"
+            >
+          </div>
+
+          <p class="microcopy">
+            One email, when Prickle launches. That's it — no spam, and your
+            address stays with us.
+          </p>
+
+          <p class="form-message form-error" id="error-invalid" role="alert" hidden>
+            That doesn't look quite like an email — mind checking it?
+          </p>
+          <p class="form-message form-error" id="error-failed" role="alert" hidden>
+            Something went wrong on our end. Mind trying again in a moment?
+          </p>
+        </form>
+
+        <div class="form-message form-success" id="success-message" role="status" hidden>
+          <p>
+            You're on the list. We'll be in touch when Prickle is ready. Take
+            care of yourself in the meantime. 🌵
+          </p>
+        </div>
+      </div>
     </main>
-    <footer>&copy; 2026 Prickle</footer>
+
+    <footer>
+      <p>Prickle is being built by one person who's had eczema since childhood.</p>
+      <p>Your skin data will always live on your device.</p>
+      <p class="legal">&copy; 2026 Prickle</p>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
   </body>
 </html>

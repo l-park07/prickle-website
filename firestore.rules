@@ -1,0 +1,23 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /waitlist/{docId} {
+      // Nobody can read, list, edit, or delete signups. Email addresses are PII.
+      allow read, update, delete: if false;
+
+      // Anonymous create only, and only in the exact expected shape.
+      allow create: if isValidSignup();
+    }
+
+    function isValidSignup() {
+      return request.resource.data.keys().hasOnly(['email', 'createdAt', 'source', 'userAgent'])
+        && request.resource.data.email is string
+        && request.resource.data.email.size() > 3
+        && request.resource.data.email.size() < 254
+        && request.resource.data.email.matches('^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$')
+        && request.resource.data.source is string
+        && request.resource.data.createdAt == request.time;   // forces serverTimestamp()
+    }
+  }
+}
