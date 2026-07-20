@@ -21,24 +21,34 @@
     <meta name="twitter:description" content="A gentler way to track eczema. Quick daily logs that stay on your device, not ours.">
     <meta name="twitter:image" content="https://getprickle.app/assets/og-image.png">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
+    <header class="site-header">
+      <a class="brand" href="/">Prickle</a>
+      <nav aria-label="Site">
+        <a href="/about.html">About</a>
+        <a href="/story.html">Story</a>
+        <a href="/privacy.html">Privacy</a>
+      </nav>
+    </header>
+
     <main class="coming-soon">
       <img class="logo" src="/assets/cactus-app-logo.png" alt="" width="80" height="80">
 
       <p class="eyebrow">Coming soon</p>
       <h1>A gentler way to track eczema.</h1>
       <p class="subhead">
-        Prickle helps you log your skin in seconds and notice how it changes
-        over time — quietly, on your own device. Because showing up to track
-        is the win, not the score.
+        Prickle helps you log your eczema in seconds and observe how it changes
+        over time, all on your own device. Whether you are a longtime eczema-haver or are new to the itch, Prickle is made for your skin.   
       </p>
 
       <ul class="value-strip">
-        <li>Quick daily logs — a few taps, not a chore</li>
-        <li>Your data stays on your device, not our servers</li>
-        <li>No streaks, no shame — a flare isn't a failure</li>
+        <li>Log daily or weekly, at your own pace</li>
+        <li>Track your flare triggers and discover new ones</li>
+        <li>Everyone's skin is different, track what suits you</li>
       </ul>
 
       <div class="signup">
@@ -53,7 +63,7 @@
               autocomplete="email"
               required
             >
-            <button type="submit" id="submit-btn">Keep me posted</button>
+            <button type="submit" id="submit-btn">Keep me posted!</button>
           </div>
 
           <!-- Honeypot: hidden from real users, off-screen and unreachable by
@@ -70,8 +80,8 @@
           </div>
 
           <p class="microcopy">
-            One email, when Prickle launches. That's it — no spam, and your
-            address stays with us.
+            You'll recieve an email when Prickle launches. No spam, and your
+            email stays with us.
           </p>
 
           <p class="form-message form-error" id="error-invalid" role="alert" hidden>
@@ -84,16 +94,13 @@
 
         <div class="form-message form-success" id="success-message" role="status" hidden>
           <p>
-            You're on the list. We'll be in touch when Prickle is ready. Take
-            care of yourself in the meantime. 🌵
+            You're on the list. Thanks for signing up! We'll let you know when Prickle is ready. 🌵
           </p>
         </div>
       </div>
     </main>
 
     <footer>
-      <p>Prickle is being built by one person who's had eczema since childhood.</p>
-      <p>Your skin data will always live on your device.</p>
       <p class="legal">&copy; 2026 Prickle</p>
     </footer>
 

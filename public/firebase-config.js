@@ -7,10 +7,10 @@
 // If you haven't registered a Web app for this project yet, do that first
 // (console > Add app > Web), then paste its config below.
 export const firebaseConfig = {
-  apiKey: 'TODO_API_KEY',
-  authDomain: 'TODO_PROJECT_ID.firebaseapp.com',
-  projectId: 'TODO_PROJECT_ID',
-  storageBucket: 'TODO_PROJECT_ID.appspot.com',
-  messagingSenderId: 'TODO_SENDER_ID',
-  appId: 'TODO_APP_ID',
+  apiKey: 'AIzaSyBnldiUmGqyDzvWTQfO20TH4ZuwhkBWmQQ',
+  authDomain: 'prickle-app.firebaseapp.com',
+  projectId: 'prickle-app',
+  storageBucket: 'prickle-app.firebasestorage.app',
+  messagingSenderId: '263994080260',
+  appId: '1:263994080260:web:dff1784b8c303da2db8951',
 };

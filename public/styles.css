@@ -110,11 +110,48 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
-/* 5. Coming-soon page layout — single centered screen, no nav */
+/* 5. Site header (brand + About/Story/Privacy) */
+.site-header {
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-lg) 0 0;
+  gap: var(--spacing-lg);
+}
+
+.site-header .brand {
+  font-weight: var(--font-weight-bold);
+  font-size: 1.25rem;
+  color: var(--color-text-primary);
+  letter-spacing: -0.5px;
+}
+
+.site-header .brand:hover {
+  color: var(--color-primary);
+}
+
+.site-header nav {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.site-header nav a {
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-body);
+}
+
+.site-header nav a:hover {
+  color: var(--color-primary);
+}
+
+/* 6. Coming-soon page layout — single centered screen */
 main.coming-soon {
   flex: 1;
   width: 100%;
-  max-width: 560px;
+  max-width: 760px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,19 +181,19 @@ main.coming-soon {
    scale — it reuses the token weights/colors/spacing, just at hero size. */
 h1 {
   font-weight: var(--font-weight-bold);
-  font-size: clamp(1.75rem, 5vw + 1rem, 2.75rem);
+  font-size: clamp(1.75rem, 5vw + 1rem, 3.5rem);
   line-height: 1.2;
   color: var(--color-text-primary);
   letter-spacing: -0.5px;
-  max-width: 20ch;
+  max-width: 24ch;
 }
 
 .subhead {
   font-weight: var(--font-weight-regular);
-  font-size: 1.15rem;
+  font-size: clamp(1.15rem, 0.4vw + 1.05rem, 1.35rem);
   line-height: 1.6;
   color: var(--color-text-secondary);
-  max-width: 46ch;
+  max-width: 52ch;
 }
 
 .value-strip {
@@ -174,10 +211,10 @@ h1 {
   color: var(--color-text-secondary);
 }
 
-/* 5. Signup form */
+/* 7. Signup form */
 .signup {
   width: 100%;
-  max-width: 420px;
+  max-width: 480px;
   margin-top: var(--spacing-md);
 }
 
@@ -281,10 +318,10 @@ h1 {
   max-width: none;
 }
 
-/* 6. Footer */
+/* 8. Footer */
 footer {
   width: 100%;
-  max-width: 560px;
+  max-width: 760px;
   margin: 0 auto;
   padding: var(--spacing-xl) var(--spacing-md);
   font-size: var(--font-size-caption);
@@ -302,10 +339,18 @@ footer .legal {
   margin-top: var(--spacing-sm);
 }
 
-/* 7. Responsive */
+/* 9. Responsive */
 @media (max-width: 600px) {
   body {
     padding: var(--spacing-md) var(--spacing-lg);
+  }
+
+  .site-header {
+    padding-top: var(--spacing-md);
+  }
+
+  .site-header nav {
+    gap: var(--spacing-md);
   }
 
   .field-row {
@@ -313,7 +358,7 @@ footer .legal {
   }
 }
 
-/* 8. Reduced motion — no decorative animation is added yet, but any future
+/* 10. Reduced motion — no decorative animation is added yet, but any future
    motion (e.g. the cactus logo, success-state transitions) must be scoped
    here rather than applied unconditionally. */
 @media (prefers-reduced-motion: no-preference) {
