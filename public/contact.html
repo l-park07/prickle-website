@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact · Prickle</title>
+<meta name="description" content="Get in touch with Prickle — ask a question, or request to export or delete your data." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --sand:#f5f3ec; --card:#ffffff; --ink:#2f3a2c; --ink-soft:#55614f;
+    --sage:#6f8f6a; --sage-deep:#4f6b4b; --sage-wash:#eaf0e6;
+    --ochre:#d9ab5f; --clay:#c8a99a; --coral:#c37a67; --focus:#a9723f;
+    --radius:14px; --maxw:640px;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} }
+  body {
+    margin:0; background:var(--sand); color:var(--ink);
+    font-family:"Open Sans",system-ui,-apple-system,sans-serif;
+    font-size:17px; line-height:1.62; -webkit-font-smoothing:antialiased;
+  }
+  .wrap { max-width:var(--maxw); margin:0 auto; padding:0 22px 96px; }
+  header.hero { padding:64px 0 32px; border-bottom:1px solid var(--clay); margin-bottom:32px; }
+  .eyebrow { font-size:13px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--sage-deep); margin:0 0 14px; }
+  h1 { font-size:clamp(30px,6vw,42px); line-height:1.12; font-weight:700; margin:0 0 16px; letter-spacing:-0.01em; }
+  h1 .accent { color:var(--sage-deep); }
+  .lede { font-size:18px; color:var(--ink-soft); margin:0; }
+  p { margin:14px 0; }
+  a { color:var(--sage-deep); text-underline-offset:2px; }
+  a:hover { color:var(--coral); }
+
+  .callout { background:var(--sage-wash); border-left:4px solid var(--sage); border-radius:0 var(--radius) var(--radius) 0; padding:16px 18px; margin:24px 0; font-size:15px; }
+  .callout p { margin:0; }
+
+  form { margin-top:8px; }
+  .field { margin:18px 0; }
+  label { display:block; font-weight:600; font-size:15px; margin-bottom:7px; }
+  .hint { font-weight:400; color:var(--ink-soft); font-size:13px; }
+  input[type="text"], input[type="email"], select, textarea {
+    width:100%; font-family:inherit; font-size:16px; color:var(--ink);
+    background:var(--card); border:1px solid var(--clay); border-radius:10px;
+    padding:12px 14px;
+  }
+  textarea { min-height:130px; resize:vertical; }
+  input:focus, select:focus, textarea:focus { outline:3px solid var(--focus); outline-offset:1px; border-color:var(--sage); }
+  .honey { position:absolute; left:-9999px; }
+
+  button {
+    background:var(--sage); color:#fff; border:none; border-radius:12px;
+    font-family:inherit; font-size:16px; font-weight:600; padding:14px 26px;
+    cursor:pointer; margin-top:8px;
+  }
+  button:hover { background:var(--sage-deep); }
+  button:disabled { opacity:0.5; cursor:default; }
+
+  .status { margin-top:18px; padding:14px 16px; border-radius:10px; font-size:15px; display:none; }
+  .status.ok  { display:block; background:var(--sage-wash); border-left:4px solid var(--sage); color:var(--sage-deep); }
+  .status.err { display:block; background:#fbecea; border-left:4px solid var(--coral); color:#8a3c30; }
+
+  footer { margin-top:56px; padding-top:22px; border-top:1px solid var(--clay); font-size:14px; color:var(--ink-soft); }
+  :focus-visible { outline:3px solid var(--focus); outline-offset:2px; border-radius:4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <p class="eyebrow">Prickle · Contact</p>
+    <h1>Get in touch.<br><span class="accent">We read everything.</span></h1>
+    <p class="lede">Questions about the app, feedback, or a request to export or delete your data — this all comes straight to the developer.</p>
+  </header>
+
+  <div class="callout">
+    <p><strong>Want your data or account deleted?</strong> Pick "Delete my account and data" below. You can do this without opening the app. We'll verify it's really you before deleting anything, then remove your account and any cloud backup.</p>
+  </div>
+
+  <form id="contactForm">
+    <!-- Web3Forms: free, no backend needed. Get a key at web3forms.com and paste it below. -->
+    <input type="hidden" name="access_key" value="1e3b5262-5be1-47e9-a532-0faf63c215d7" />
+    <input type="hidden" name="from_name" value="Prickle contact form" />
+    <input type="hidden" name="subject" value="New Prickle contact / data request" />
+    <!-- honeypot: bots fill this, humans don't see it -->
+    <input type="checkbox" name="botcheck" class="honey" tabindex="-1" autocomplete="off" />
+
+    <div class="field">
+      <label for="name">Name <span class="hint">(optional)</span></label>
+      <input type="text" id="name" name="name" autocomplete="name" />
+    </div>
+
+    <div class="field">
+      <label for="email">Email <span class="hint">— so we can reply, and verify deletion requests</span></label>
+      <input type="email" id="email" name="email" required autocomplete="email"
+             placeholder="the email on your Prickle account" />
+    </div>
+
+    <div class="field">
+      <label for="request_type">What can we help with?</label>
+      <select id="request_type" name="request_type" required>
+        <option value="Question or feedback">Question or feedback about the app</option>
+        <option value="Delete account and data">Delete my account and data</option>
+        <option value="Export my data">Export a copy of my data</option>
+        <option value="Correct my data">Correct my data</option>
+        <option value="Other">Something else</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required
+                placeholder="Tell us what you need. For deletion requests, using the email on your account helps us verify it's you."></textarea>
+    </div>
+
+    <button type="submit" id="submitBtn">Send message</button>
+    <div class="status" id="status" role="status" aria-live="polite"></div>
+  </form>
+
+  <p style="margin-top:28px; color:var(--ink-soft); font-size:15px;">
+    Prefer email? Reach us directly at <a href="mailto:lgpark@parkfam.com">lgpark@parkfam.com</a>.
+    See our <a href="/privacy.html">Privacy Policy</a> for how requests are handled.
+  </p>
+
+  <footer>
+    <p>Prickle — a calmer way to track eczema. A flare is not a failure.</p>
+  </footer>
+
+</div>
+
+<script>
+  // Submits to Web3Forms via fetch so the user gets inline feedback and stays
+  // on the page. Falls back to a mailto suggestion on failure.
+  const form = document.getElementById('contactForm');
+  const statusEl = document.getElementById('status');
+  const btn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    statusEl.className = 'status';
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    try {
+      const data = new FormData(form);
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data,
+      });
+      const json = await res.json();
+      if (json.success) {
+        form.reset();
+        statusEl.textContent = "Thanks — your message is on its way. We'll get back to you by email.";
+        statusEl.className = 'status ok';
+      } else {
+        throw new Error(json.message || 'Submit failed');
+      }
+    } catch (err) {
+      statusEl.innerHTML = "Something went wrong sending that. Please email us directly at " +
+        "<a href='mailto:lgpark@parkfam.com'>lgpark@parkfam.com</a>.";
+      statusEl.className = 'status err';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Send message';
+    }
+  });
+</script>
+</body>
+</html>
