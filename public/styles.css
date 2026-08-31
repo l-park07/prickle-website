@@ -505,7 +505,7 @@ main.content-page {
 }
 
 .prose p {
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
   font-size: var(--font-size-body);
   line-height: var(--line-height-body);
   max-width: none;
